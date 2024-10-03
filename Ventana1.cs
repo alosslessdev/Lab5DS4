@@ -22,7 +22,6 @@ namespace Lab5DS4
         {
             Logica logica = new Logica();
             logica.Calcular(precioPorBoleto, numeroEntradas, estacionamientos);
-            //sdfghkjk aaaaaaaaa
 
         }
     }
