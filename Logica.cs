@@ -8,5 +8,17 @@ namespace Lab5DS4
 {
     internal class Logica
     {
+
+        Logica() { 
+        
+        }
+
+        public void Calcular() { 
+
+
+
+        }
     }
+
+   
 }
