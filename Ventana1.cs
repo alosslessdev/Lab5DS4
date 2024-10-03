@@ -15,6 +15,15 @@ namespace Lab5DS4
         public Ventana1()
         {
             InitializeComponent();
+
+        }
+
+        private void Ventana1_Load(object sender, EventArgs e)
+        {
+            Logica logica = new Logica();
+            logica.Calcular(precioPorBoleto, numeroEntradas, estacionamientos);
+
+
         }
     }
 }
