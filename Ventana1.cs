@@ -28,10 +28,10 @@ namespace Lab5DS4
                 string tipoEntrada = cbTipoEntrada.SelectedItem.ToString();
                 int cantidadEntradas = (int)numEntrada.Value;
                 bool conEstacionamiento = ckbEntradas.Checked;
-                 
+
                 // Crear una instancia de la clase lógica y calcular
-                CalculadorEntradas calculador = new CalculadorEntradas(tipoEntrada, cantidadEntradas, conEstacionamiento);
-                double precioTotal = calculador.CalcularTotal();
+                Logica calculador = new Logica();
+                decimal precioTotal = calculador.CalcularTotal(cantidadEntradas, tipoEntrada, conEstacionamiento);
                 double itbms = calculador.CalcularITBMS();
                 double spac = calculador.CalcularSPAC();
 
