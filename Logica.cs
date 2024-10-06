@@ -34,7 +34,7 @@ namespace Lab5DS4
         }
 
         // Método para calcular el total de la compra
-        public decimal CalcularTotal(int cantidadEntradas, string tipoEntrada, bool estacionamiento)
+        internal decimal CalcularTotal(int cantidadEntradas, string tipoEntrada, bool estacionamiento)
         {
             decimal precioEntrada = ObtenerPrecioEntrada(tipoEntrada);
             decimal totalEntradas = cantidadEntradas * precioEntrada;
@@ -62,13 +62,13 @@ namespace Lab5DS4
             switch (tipoEntrada.ToLower())
             {
                 case "platino":
-                    return PRECIO_PLATINO;
+                    return precioPlatino;
                 case "vip":
-                    return PRECIO_VIP;
+                    return precioVip;
                 case "ejecutivo":
-                    return PRECIO_EJECUTIVO;
+                    return precioEjecutivo;
                 case "general":
-                    return PRECIO_GENERAL;
+                    return precioGeneral;
                 default:
                     throw new ArgumentException("Tipo de entrada inválido");
             }
