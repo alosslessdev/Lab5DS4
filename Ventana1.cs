@@ -17,6 +17,15 @@ namespace Lab5DS4
         public wdReservasEntrada()
         {
             InitializeComponent();
+
+        }
+
+        private void Ventana1_Load(object sender, EventArgs e)
+        {
+            Logica logica = new Logica();
+            logica.Calcular(precioPorBoleto, numeroEntradas, estacionamientos);
+
+
         }
 
         private void Ventana1_Load(object sender, EventArgs e)
