@@ -32,8 +32,8 @@ namespace Lab5DS4
                 // Crear una instancia de la clase lógica y calcular
                 Logica calculador = new Logica();
                 decimal precioTotal = calculador.CalcularTotal(cantidadEntradas, tipoEntrada, conEstacionamiento);
-                double itbms = calculador.CalcularITBMS();
-                double spac = calculador.CalcularSPAC();
+                decimal itbms = calculador.CalcularITBMS;
+                decimal spac = calculador.CalcularSPAC;
 
                 // Mostrar resultados en los labels
                 lblPrecioTotal.Text = $"Precio Total: {precioTotal:C}";
