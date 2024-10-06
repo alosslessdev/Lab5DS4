@@ -17,38 +17,7 @@ namespace Lab5DS4
         public wdReservasEntrada()
         {
             InitializeComponent();
-
-        }
-
-        private void Ventana1_Load(object sender, EventArgs e)
-        {
-            Logica logica = new Logica();
-            logica.Calcular(precioPorBoleto, numeroEntradas, estacionamientos);
-
-        }
-
-        private void Ventana1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Checkbox1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numEntrada_ValueChanged(object sender, EventArgs e)
-        {
+            cbTipoEntrada.SelectedIndex = 0;
 
         }
 
@@ -56,53 +25,67 @@ namespace Lab5DS4
         {
             try
             {
-                // Obtener datos del formulario
+
+                if (cbTipoEntrada.SelectedItem.ToString() != null)
+                {
+                    // Obtener datos del formulario
                 string tipoEntrada = cbTipoEntrada.SelectedItem.ToString();
                 int cantidadEntradas = (int)numEntrada.Value;
                 bool conEstacionamiento = ckbEntradas.Checked;
-                 
-                // Crear una instancia de la clase lógica y calcular
-                CalculadorEntradas calculador = new CalculadorEntradas(tipoEntrada, cantidadEntradas, conEstacionamiento);
-                double precioTotal = calculador.CalcularTotal();
-                double itbms = calculador.CalcularITBMS();
-                double spac = calculador.CalcularSPAC();
 
-                // Mostrar resultados en los labels
-                lblPrecioTotal.Text = $"Precio Total: {precioTotal:C}";
-                lblITBMS.Text = $"ITBMS (7%): {itbms:C}";
-                lblSPAC.Text = $"Impuesto SPAC (5%): {spac:C}";
 
-                if (conEstacionamiento)
-                {
-                    lblEstacionamiento.Text = "Incluye estacionamiento.";
+
+
+                    // Crear una instancia de la clase lógica y calcular
+                    Logica calculador = new Logica();
+                    decimal precioTotal = calculador.CalcularTotal(cantidadEntradas, tipoEntrada, conEstacionamiento);
+                    decimal itbms = calculador.CalcularITBMS;
+                    decimal spac = calculador.CalcularSPAC;
+
+                    // Mostrar resultados en los labels
+                    lblPrecioTotal.Text = $"Precio Total: {precioTotal:C}";
+                    lblITBMS.Text = $"ITBMS (7%): {itbms:C}";
+                    lblSPAC.Text = $"Impuesto SPAC (5%): {spac:C}";
+
+                    if (conEstacionamiento)
+                    {
+                        lblEstacionamiento.Text = "Incluye estacionamiento.";
+                    }
+                    else
+                    {
+                        lblEstacionamiento.Text = string.Empty;
+                    }
                 }
-                else
-                {
-                    lblEstacionamiento.Text = string.Empty;
+                else {
+                    MessageBox.Show("No se ha seleccionado el tipo de entrada. Por favor, haga click abajo de donde dice tipo de entrada y elija una de " +
+                        "las opciones.");
+
                 }
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("No se ha seleccionado el tipo de entrada. Por favor, haga click abajo de donde dice tipo de entrada y elija una de " +
+                                       "las opciones.");
             }
         }
 
-        private void lblPrecioTotal_Click(object sender, EventArgs e)
+        private void numEntrada_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void lblITBMS_Click(object sender, EventArgs e)
+        private void ckbEntradas_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void lblSPAC_Click(object sender, EventArgs e)
+        private void cbTipoEntrada_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void lblEstacionamiento_Click(object sender, EventArgs e)
+        private void labelEstaticoEntrada_Click(object sender, EventArgs e)
         {
 
         }
