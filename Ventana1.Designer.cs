@@ -50,7 +50,6 @@
             this.cbTipoEntrada.Name = "cbTipoEntrada";
             this.cbTipoEntrada.Size = new System.Drawing.Size(121, 24);
             this.cbTipoEntrada.TabIndex = 0;
-            this.cbTipoEntrada.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // numEntrada
             // 
@@ -73,7 +72,6 @@
             0,
             0,
             0});
-            this.numEntrada.ValueChanged += new System.EventHandler(this.numEntrada_ValueChanged);
             // 
             // ckbEntradas
             // 
@@ -84,7 +82,6 @@
             this.ckbEntradas.TabIndex = 2;
             this.ckbEntradas.Text = "Deseas Estacionamiento?";
             this.ckbEntradas.UseVisualStyleBackColor = true;
-            this.ckbEntradas.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btCalcular
             // 
@@ -104,7 +101,6 @@
             this.lblPrecioTotal.Size = new System.Drawing.Size(83, 16);
             this.lblPrecioTotal.TabIndex = 4;
             this.lblPrecioTotal.Text = "Precio Total:";
-            this.lblPrecioTotal.Click += new System.EventHandler(this.lblPrecioTotal_Click);
             // 
             // lblSPAC
             // 
@@ -114,7 +110,6 @@
             this.lblSPAC.Size = new System.Drawing.Size(134, 16);
             this.lblSPAC.TabIndex = 5;
             this.lblSPAC.Text = "Impuesto SPAC (5%):";
-            this.lblSPAC.Click += new System.EventHandler(this.lblSPAC_Click);
             // 
             // lblITBMS
             // 
@@ -124,7 +119,6 @@
             this.lblITBMS.Size = new System.Drawing.Size(81, 16);
             this.lblITBMS.TabIndex = 7;
             this.lblITBMS.Text = "ITBMS (7%):";
-            this.lblITBMS.Click += new System.EventHandler(this.lblITBMS_Click);
             // 
             // lblEstacionamiento
             // 
@@ -134,7 +128,6 @@
             this.lblEstacionamiento.Size = new System.Drawing.Size(107, 16);
             this.lblEstacionamiento.TabIndex = 8;
             this.lblEstacionamiento.Text = "Estacionamiento";
-            this.lblEstacionamiento.Click += new System.EventHandler(this.lblEstacionamiento_Click);
             // 
             // wdReservasEntrada
             // 
@@ -151,7 +144,6 @@
             this.Controls.Add(this.cbTipoEntrada);
             this.Name = "wdReservasEntrada";
             this.Text = "ReservasEntradas";
-            this.Load += new System.EventHandler(this.Ventana1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numEntrada)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -20,33 +20,6 @@ namespace Lab5DS4
 
         }
 
-        private void Ventana1_Load(object sender, EventArgs e)
-        {
-            Logica logica = new Logica();
-            logica.Calcular(precioPorBoleto, numeroEntradas, estacionamientos);
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Checkbox1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numEntrada_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btCalcular_Click(object sender, EventArgs e)
         {
             try
@@ -82,24 +55,5 @@ namespace Lab5DS4
             }
         }
 
-        private void lblPrecioTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblITBMS_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSPAC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEstacionamiento_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
