@@ -27,11 +27,6 @@ namespace Lab5DS4
 
         }
 
-        private void Ventana1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
