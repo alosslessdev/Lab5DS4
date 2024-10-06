@@ -30,9 +30,11 @@ namespace Lab5DS4
 
                // Aplicar el impuesto de la SPAC (5% sobre el total de entradas)
                decimal impuestoSPAC = totalEntradas * IMPUESTO_SPAC;
-
-               // Calcular el total por estacionamientos (si es que se ha seleccionado)
-               decimal totalEstacionamiento = estacionamiento ? PRECIO_ESTACIONAMIENTO * 2 : 0;
+                
+               // Variable para la cantidad de estacionamientos seleccionados (0, 1 o 2)
+               int cantidadEstacionamientos = 0;  
+              // Calcular el total por estacionamientos (si es que se ha seleccionado al menos 1)
+              decimal totalEstacionamiento = cantidadEstacionamientos > 0 ? PRECIO_ESTACIONAMIENTO * cantidadEstacionamientos : 0;
 
                // Sumar el total de entradas y estacionamiento
                decimal totalConEstacionamiento = totalEntradas + totalEstacionamiento + impuestoSPAC;
