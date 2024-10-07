@@ -34,20 +34,27 @@ namespace Lab5DS4
         }
 
         // Método para calcular el total de la compra
-        internal decimal CalcularTotal(int cantidadEntradas, string tipoEntrada, bool estacionamiento)
+        internal decimal CalcularTotal(int cantidadEntradas, string tipoEntrada, string estacionamiento)
         {
             decimal precioEntrada = ObtenerPrecioEntrada(tipoEntrada);
             decimal totalEntradas = cantidadEntradas * precioEntrada;
 
             // Aplicar el impuesto de la SPAC (5% sobre el total de entradas)
-            decimal impuestoSPACCalcular = totalEntradas * impuestoSPAC;
-            impuestoSPACResultado = impuestoSPACCalcular;
+            if (totalEntradas != 0)
+            {
+                decimal impuestoSPACCalcular = totalEntradas * impuestoSPAC;
+                impuestoSPACResultado = impuestoSPACCalcular;
+            }
+            else {
+                impuestoSPACResultado = 0;
 
-        // Calcular el total por estacionamientos (si es que se ha seleccionado)
-        decimal totalEstacionamiento = estacionamiento ? precioEstacionamiento * 2 : 0;
+            }
+
+            // Calcular el total por estacionamientos (si es que se ha seleccionado)
+            decimal totalEstacionamiento = Convert.ToInt16(estacionamiento) * precioEstacionamiento;
 
             // Sumar el total de entradas y estacionamiento
-            decimal totalConEstacionamiento = totalEntradas + totalEstacionamiento + impuestoSPAC;
+            decimal totalConEstacionamiento = totalEntradas + totalEstacionamiento + impuestoSPACResultado;
 
             // Aplicar el ITBMS (7% sobre el total final)
             decimal itbmsTotal = totalConEstacionamiento * ITBMS;
@@ -70,7 +77,7 @@ namespace Lab5DS4
                 case "general":
                     return precioGeneral;
                 default:
-                    throw new ArgumentException("Tipo de entrada inválido");
+                    return 0;
             }
         } 
     }
