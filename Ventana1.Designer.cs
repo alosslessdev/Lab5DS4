@@ -32,7 +32,6 @@ namespace Lab5DS4
         {
             this.cbTipoEntrada = new System.Windows.Forms.ComboBox();
             this.numEntrada = new System.Windows.Forms.NumericUpDown();
-            this.ckbEntradas = new System.Windows.Forms.CheckBox();
             this.btCalcular = new System.Windows.Forms.Button();
             this.lblPrecioTotal = new System.Windows.Forms.Label();
             this.lblSPAC = new System.Windows.Forms.Label();
@@ -41,6 +40,8 @@ namespace Lab5DS4
             this.labelEstaticoEntrada = new System.Windows.Forms.Label();
             this.labelEstaticoEncabezado = new System.Windows.Forms.Label();
             this.labelEstaticoEntradas = new System.Windows.Forms.Label();
+            this.cbEstacionamientos = new System.Windows.Forms.ComboBox();
+            this.labelEstaticoNumeroEstacionamiento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numEntrada)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@ namespace Lab5DS4
             this.cbTipoEntrada.FormattingEnabled = true;
             this.cbTipoEntrada.Items.AddRange(new object[] {
             "",
+            "Platino",
             "VIP",
             "Ejecutivo",
             "General"});
@@ -60,7 +62,7 @@ namespace Lab5DS4
             // 
             // numEntrada
             // 
-            this.numEntrada.Location = new System.Drawing.Point(905, 135);
+            this.numEntrada.Location = new System.Drawing.Point(932, 134);
             this.numEntrada.Maximum = new decimal(new int[] {
             10,
             0,
@@ -80,23 +82,10 @@ namespace Lab5DS4
             0,
             0});
             // 
-            // ckbEntradas
-            // 
-            this.ckbEntradas.AutoSize = true;
-            this.ckbEntradas.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbEntradas.Location = new System.Drawing.Point(330, 133);
-            this.ckbEntradas.Name = "ckbEntradas";
-            this.ckbEntradas.Size = new System.Drawing.Size(227, 24);
-            this.ckbEntradas.TabIndex = 2;
-            this.ckbEntradas.Text = "Deseas Estacionamiento?";
-            this.ckbEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbEntradas.UseVisualStyleBackColor = true;
-            // 
             // btCalcular
             // 
             this.btCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCalcular.Location = new System.Drawing.Point(1043, 133);
+            this.btCalcular.Location = new System.Drawing.Point(1070, 132);
             this.btCalcular.Name = "btCalcular";
             this.btCalcular.Size = new System.Drawing.Size(106, 29);
             this.btCalcular.TabIndex = 3;
@@ -108,7 +97,7 @@ namespace Lab5DS4
             // 
             this.lblPrecioTotal.AutoSize = true;
             this.lblPrecioTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioTotal.Location = new System.Drawing.Point(71, 352);
+            this.lblPrecioTotal.Location = new System.Drawing.Point(74, 234);
             this.lblPrecioTotal.Name = "lblPrecioTotal";
             this.lblPrecioTotal.Size = new System.Drawing.Size(104, 20);
             this.lblPrecioTotal.TabIndex = 4;
@@ -118,7 +107,7 @@ namespace Lab5DS4
             // 
             this.lblSPAC.AutoSize = true;
             this.lblSPAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSPAC.Location = new System.Drawing.Point(71, 434);
+            this.lblSPAC.Location = new System.Drawing.Point(74, 316);
             this.lblSPAC.Name = "lblSPAC";
             this.lblSPAC.Size = new System.Drawing.Size(173, 20);
             this.lblSPAC.TabIndex = 5;
@@ -128,7 +117,7 @@ namespace Lab5DS4
             // 
             this.lblITBMS.AutoSize = true;
             this.lblITBMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblITBMS.Location = new System.Drawing.Point(71, 399);
+            this.lblITBMS.Location = new System.Drawing.Point(74, 281);
             this.lblITBMS.Name = "lblITBMS";
             this.lblITBMS.Size = new System.Drawing.Size(106, 20);
             this.lblITBMS.TabIndex = 7;
@@ -138,7 +127,7 @@ namespace Lab5DS4
             // 
             this.lblEstacionamiento.AutoSize = true;
             this.lblEstacionamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstacionamiento.Location = new System.Drawing.Point(71, 473);
+            this.lblEstacionamiento.Location = new System.Drawing.Point(74, 355);
             this.lblEstacionamiento.Name = "lblEstacionamiento";
             this.lblEstacionamiento.Size = new System.Drawing.Size(133, 20);
             this.lblEstacionamiento.TabIndex = 8;
@@ -168,18 +157,43 @@ namespace Lab5DS4
             // 
             this.labelEstaticoEntradas.AutoSize = true;
             this.labelEstaticoEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstaticoEntradas.Location = new System.Drawing.Point(716, 135);
+            this.labelEstaticoEntradas.Location = new System.Drawing.Point(743, 134);
             this.labelEstaticoEntradas.Name = "labelEstaticoEntradas";
             this.labelEstaticoEntradas.Size = new System.Drawing.Size(166, 20);
             this.labelEstaticoEntradas.TabIndex = 11;
             this.labelEstaticoEntradas.Text = "Numero de entradas:";
+            // 
+            // cbEstacionamientos
+            // 
+            this.cbEstacionamientos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstacionamientos.FormattingEnabled = true;
+            this.cbEstacionamientos.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.cbEstacionamientos.Location = new System.Drawing.Point(604, 133);
+            this.cbEstacionamientos.Name = "cbEstacionamientos";
+            this.cbEstacionamientos.Size = new System.Drawing.Size(121, 24);
+            this.cbEstacionamientos.TabIndex = 12;
+            // 
+            // labelEstaticoNumeroEstacionamiento
+            // 
+            this.labelEstaticoNumeroEstacionamiento.AutoSize = true;
+            this.labelEstaticoNumeroEstacionamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEstaticoNumeroEstacionamiento.Location = new System.Drawing.Point(340, 134);
+            this.labelEstaticoNumeroEstacionamiento.Name = "labelEstaticoNumeroEstacionamiento";
+            this.labelEstaticoNumeroEstacionamiento.Size = new System.Drawing.Size(232, 20);
+            this.labelEstaticoNumeroEstacionamiento.TabIndex = 13;
+            this.labelEstaticoNumeroEstacionamiento.Text = "Numero de estacionamientos:";
             // 
             // wdReservasEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1183, 669);
+            this.ClientSize = new System.Drawing.Size(1352, 444);
+            this.Controls.Add(this.labelEstaticoNumeroEstacionamiento);
+            this.Controls.Add(this.cbEstacionamientos);
             this.Controls.Add(this.labelEstaticoEntradas);
             this.Controls.Add(this.labelEstaticoEncabezado);
             this.Controls.Add(this.labelEstaticoEntrada);
@@ -188,7 +202,6 @@ namespace Lab5DS4
             this.Controls.Add(this.lblSPAC);
             this.Controls.Add(this.lblPrecioTotal);
             this.Controls.Add(this.btCalcular);
-            this.Controls.Add(this.ckbEntradas);
             this.Controls.Add(this.numEntrada);
             this.Controls.Add(this.cbTipoEntrada);
             this.Name = "wdReservasEntrada";
@@ -203,7 +216,6 @@ namespace Lab5DS4
 
         private System.Windows.Forms.ComboBox cbTipoEntrada;
         private System.Windows.Forms.NumericUpDown numEntrada;
-        private System.Windows.Forms.CheckBox ckbEntradas;
         private System.Windows.Forms.Button btCalcular;
         private System.Windows.Forms.Label lblPrecioTotal;
         private System.Windows.Forms.Label lblSPAC;
@@ -212,6 +224,8 @@ namespace Lab5DS4
         private Label labelEstaticoEntrada;
         private Label labelEstaticoEncabezado;
         private Label labelEstaticoEntradas;
+        private ComboBox cbEstacionamientos;
+        private Label labelEstaticoNumeroEstacionamiento;
     }
 }
 
