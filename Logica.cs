@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Carrasco, Nathan
+ * Herrera, Francisco
+ * Wu, Iván
+ */
+
 namespace Lab5DS4
 {
     internal class Logica
